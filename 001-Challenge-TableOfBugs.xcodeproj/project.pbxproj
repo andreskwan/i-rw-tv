@@ -66,7 +66,7 @@
 		EA3FC17B1EDC8DEC00B7E934 /* prayingMantis.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prayingMantis.jpg; sourceTree = "<group>"; };
 		EA3FC17C1EDC8DEC00B7E934 /* roach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roach.jpg; sourceTree = "<group>"; };
 		EA3FC17D1EDC8DEC00B7E934 /* robberFly.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = robberFly.jpg; sourceTree = "<group>"; };
-		EA3FC17E1EDC8DEC00B7E934 /* ScaryBug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaryBug.swift; sourceTree = "<group>"; };
+		EA3FC17E1EDC8DEC00B7E934 /* ScaryBug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaryBug.swift; path = resources/ScaryBug.swift; sourceTree = "<group>"; };
 		EA3FC17F1EDC8DEC00B7E934 /* scorpion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = scorpion.jpg; sourceTree = "<group>"; };
 		EA3FC1801EDC8DEC00B7E934 /* shieldBug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shieldBug.jpg; sourceTree = "<group>"; };
 		EA3FC1811EDC8DEC00B7E934 /* shockedface2_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shockedface2_empty.png; sourceTree = "<group>"; };
@@ -106,6 +106,7 @@
 		EA3FC1581EDC823700B7E934 /* 001-Challenge-TableOfBugs */ = {
 			isa = PBXGroup;
 			children = (
+				EA3FC1A01EDC8F7C00B7E934 /* Model */,
 				EA3FC1591EDC823700B7E934 /* AppDelegate.swift */,
 				EA3FC15B1EDC823700B7E934 /* ViewController.swift */,
 				EA3FC15D1EDC823700B7E934 /* Main.storyboard */,
@@ -138,7 +139,6 @@
 				EA3FC17B1EDC8DEC00B7E934 /* prayingMantis.jpg */,
 				EA3FC17C1EDC8DEC00B7E934 /* roach.jpg */,
 				EA3FC17D1EDC8DEC00B7E934 /* robberFly.jpg */,
-				EA3FC17E1EDC8DEC00B7E934 /* ScaryBug.swift */,
 				EA3FC17F1EDC8DEC00B7E934 /* scorpion.jpg */,
 				EA3FC1801EDC8DEC00B7E934 /* shieldBug.jpg */,
 				EA3FC1811EDC8DEC00B7E934 /* shockedface2_empty.png */,
@@ -148,6 +148,14 @@
 				EA3FC1851EDC8DEC00B7E934 /* wolfSpider.jpg */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		EA3FC1A01EDC8F7C00B7E934 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EA3FC17E1EDC8DEC00B7E934 /* ScaryBug.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
