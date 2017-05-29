@@ -38,6 +38,7 @@
 		EA3FC19D1EDC8DEC00B7E934 /* stagBeetle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA3FC1831EDC8DEC00B7E934 /* stagBeetle.jpg */; };
 		EA3FC19E1EDC8DEC00B7E934 /* stinkbug.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA3FC1841EDC8DEC00B7E934 /* stinkbug.jpg */; };
 		EA3FC19F1EDC8DEC00B7E934 /* wolfSpider.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA3FC1851EDC8DEC00B7E934 /* wolfSpider.jpg */; };
+		EA85A3D51EDCA7AC0039EDEA /* BugsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA85A3D41EDCA7AC0039EDEA /* BugsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		EA3FC1831EDC8DEC00B7E934 /* stagBeetle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stagBeetle.jpg; sourceTree = "<group>"; };
 		EA3FC1841EDC8DEC00B7E934 /* stinkbug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stinkbug.jpg; sourceTree = "<group>"; };
 		EA3FC1851EDC8DEC00B7E934 /* wolfSpider.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wolfSpider.jpg; sourceTree = "<group>"; };
+		EA85A3D41EDCA7AC0039EDEA /* BugsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				EA3FC1591EDC823700B7E934 /* AppDelegate.swift */,
 				EA3FC15B1EDC823700B7E934 /* ViewController.swift */,
 				EA3FC15D1EDC823700B7E934 /* Main.storyboard */,
+				EA85A3D41EDCA7AC0039EDEA /* BugsTableViewController.swift */,
 				EA3FC16B1EDC8DEC00B7E934 /* resources */,
 				EA3FC1601EDC823700B7E934 /* Assets.xcassets */,
 				EA3FC1621EDC823700B7E934 /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA85A3D51EDCA7AC0039EDEA /* BugsTableViewController.swift in Sources */,
 				EA3FC15C1EDC823700B7E934 /* ViewController.swift in Sources */,
 				EA3FC15A1EDC823700B7E934 /* AppDelegate.swift in Sources */,
 				EA3FC1981EDC8DEC00B7E934 /* ScaryBug.swift in Sources */,
@@ -422,6 +426,7 @@
 				EA3FC16A1EDC823700B7E934 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
