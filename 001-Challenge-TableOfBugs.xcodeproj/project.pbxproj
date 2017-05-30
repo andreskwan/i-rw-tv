@@ -39,6 +39,7 @@
 		EA3FC19E1EDC8DEC00B7E934 /* stinkbug.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA3FC1841EDC8DEC00B7E934 /* stinkbug.jpg */; };
 		EA3FC19F1EDC8DEC00B7E934 /* wolfSpider.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA3FC1851EDC8DEC00B7E934 /* wolfSpider.jpg */; };
 		EA85A3D51EDCA7AC0039EDEA /* BugsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA85A3D41EDCA7AC0039EDEA /* BugsTableViewController.swift */; };
+		EADD714A1EDD09CC00364398 /* BugSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADD71491EDD09CC00364398 /* BugSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		EA3FC1841EDC8DEC00B7E934 /* stinkbug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stinkbug.jpg; sourceTree = "<group>"; };
 		EA3FC1851EDC8DEC00B7E934 /* wolfSpider.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wolfSpider.jpg; sourceTree = "<group>"; };
 		EA85A3D41EDCA7AC0039EDEA /* BugsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsTableViewController.swift; sourceTree = "<group>"; };
+		EADD71491EDD09CC00364398 /* BugSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		EA3FC1A01EDC8F7C00B7E934 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EADD71491EDD09CC00364398 /* BugSection.swift */,
 				EA3FC17E1EDC8DEC00B7E934 /* ScaryBug.swift */,
 			);
 			name = Model;
@@ -261,6 +264,7 @@
 			files = (
 				EA85A3D51EDCA7AC0039EDEA /* BugsTableViewController.swift in Sources */,
 				EA3FC15C1EDC823700B7E934 /* ViewController.swift in Sources */,
+				EADD714A1EDD09CC00364398 /* BugSection.swift in Sources */,
 				EA3FC15A1EDC823700B7E934 /* AppDelegate.swift in Sources */,
 				EA3FC1981EDC8DEC00B7E934 /* ScaryBug.swift in Sources */,
 			);

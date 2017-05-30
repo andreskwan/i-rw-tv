@@ -10,11 +10,34 @@ import UIKit
 
 class BugsTableViewController: UITableViewController {
     
-    var bugs = [ScaryBug]()
+    var bugSections = [BugSection]()
+    
+    private func setBugSections() {
+        // TODO: - TODO - I need to enumerate an enum
+        // so I could append to the array with the appropiate index value
+        // https://stackoverflow.com/questions/24007461/how-to-enumerate-an-enum-with-string-type
+        
+        bugSections.append(BugSection(amountOfFear: .Aiiiiieeeee))
+        bugSections.append(BugSection(amountOfFear: .Aiiiiieeeee))
+        bugSections.append(BugSection(amountOfFear: .Aiiiiieeeee))
+        bugSections.append(BugSection(amountOfFear: .Aiiiiieeeee))
+        bugSections.append(BugSection(amountOfFear: .Aiiiiieeeee))
+        
+        bugSections[ScaryFactor.Aiiiiieeeee.rawValue] = BugSection(amountOfFear: .Aiiiiieeeee)
+        bugSections[ScaryFactor.AverageScary.rawValue] = BugSection(amountOfFear: .AverageScary)
+        bugSections[ScaryFactor.NotScary.rawValue] = BugSection(amountOfFear: .NotScary)
+        bugSections[ScaryFactor.QuiteScary.rawValue] = BugSection(amountOfFear: .QuiteScary)
+        bugSections[ScaryFactor.ALittleScary.rawValue] = BugSection(amountOfFear: .ALittleScary)
+        
+        for bug in ScaryBug.bugs() {
+            bugSections[bug.howScary.rawValue].bugs.append(bug)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bugs = ScaryBug.bugs()
+        // TODO: - TODO - set the bugSections array
+        setBugSections()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,20 +52,21 @@ class BugsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    // TODO: - TODO - count the enum
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        
+        return bugSections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return bugs.count
+        return bugSections[section].bugs.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BugCell", for: indexPath)
-        let bug = bugs[indexPath.row]
+        let bug = bugSections[indexPath.section].bugs[indexPath.row]
         cell.textLabel?.text = bug.name
         cell.detailTextLabel?.text = ScaryBug.scaryFactorToString(scaryFactor: bug.howScary)
         
@@ -52,6 +76,9 @@ class BugsTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return ScaryBug.scaryFactorToString(scaryFactor: bugSections[section].amountOfFear)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
