@@ -38,7 +38,7 @@ class BugsTableViewController: UITableViewController {
         super.viewDidLoad()
         // TODO: - TODO - set the bugSections array
         setBugSections()
-        
+        navigationItem.rightBarButtonItem = editButtonItem
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -61,23 +61,48 @@ class BugsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return bugSections[section].bugs.count
+        let adjustment = isEditing ? 1 : 0
+        // TODO: - TODO - validate for adding a new row per section
+        return bugSections[section].bugs.count + adjustment
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BugCell", for: indexPath)
-        let bug = bugSections[indexPath.section].bugs[indexPath.row]
-        cell.textLabel?.text = bug.name
-        cell.detailTextLabel?.text = ScaryBug.scaryFactorToString(scaryFactor: bug.howScary)
         
-        if let bugImage = bug.image {
-            cell.imageView?.image = bugImage
+        if indexPath.row >= bugSections[indexPath.section].bugs.count {
+            // TODO: - TODO - read new content from user.
+            // we are reusing a cell so the image must be set. should be nil
+            cell.textLabel?.text = "Add Title"
+            cell.detailTextLabel?.text = nil
+        } else {
+            let bug = bugSections[indexPath.section].bugs[indexPath.row]
+            cell.textLabel?.text = bug.name
+            cell.detailTextLabel?.text = ScaryBug.scaryFactorToString(scaryFactor: bug.howScary)
+            
+            if let bugImage = bug.image {
+                cell.imageView?.image = bugImage
+            }
         }
         return cell
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return ScaryBug.scaryFactorToString(scaryFactor: bugSections[section].amountOfFear)
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        // TODO: - TODO - what happens if I remove this line?
+        super.setEditing(editing, animated: animated)
+        if isEditing {
+            tableView.beginUpdates()
+                for (sectionIndex, section) in bugSections.enumerated() {
+                    let indexPath = IndexPath(row: section.bugs.count, section: sectionIndex)
+                    tableView.insertRows(at: [indexPath], with: .fade)
+                }
+            tableView.endUpdates()
+        } else {
+            
+        }
     }
     /*
     // Override to support conditional editing of the table view.
