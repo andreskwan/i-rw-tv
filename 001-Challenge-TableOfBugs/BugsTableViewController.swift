@@ -123,6 +123,7 @@ class BugsTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+             
         }    
     }
 
@@ -150,5 +151,13 @@ class BugsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        let bugSection = bugSections[indexPath.section]
+        if indexPath.row >= bugSection.bugs.count {
+            return .insert
+        }
+        return .delete
+    }
 }
+
+
