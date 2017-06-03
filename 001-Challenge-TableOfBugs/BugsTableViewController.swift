@@ -69,11 +69,13 @@ class BugsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BugCell", for: indexPath)
         
+        //>= because equals means indexPath.count == bugs.count + 1
         if indexPath.row >= bugSections[indexPath.section].bugs.count {
-            // TODO: - TODO - read new content from user.
+            // We are providing a cell to allow to add a new cell
             // we are reusing a cell so the image must be set. should be nil
-            cell.textLabel?.text = "Add Title"
+            cell.textLabel?.text = "Add New Bug"
             cell.detailTextLabel?.text = nil
+            cell.imageView?.image = nil
         } else {
             let bug = bugSections[indexPath.section].bugs[indexPath.row]
             cell.textLabel?.text = bug.name

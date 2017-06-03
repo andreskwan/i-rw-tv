@@ -4,22 +4,6 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "001-Challenge-TableOfBugs/ViewController.swift"
-            timestampString = "517773092.12007"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
@@ -32,15 +16,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "001-Challenge-TableOfBugs/BugsTableViewController.swift"
-            timestampString = "518002845.699383"
+            timestampString = "518188712.490182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "tableView(_:editingStyleForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -52,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "001-Challenge-TableOfBugs/BugsTableViewController.swift"
-            timestampString = "518002845.699383"
+            timestampString = "518188712.490182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "tableView(_:editingStyleForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -64,16 +48,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             condition = "indexPath.row &gt; bugSection.bugs.count"
             continueAfterRunningActions = "No"
             filePath = "001-Challenge-TableOfBugs/BugsTableViewController.swift"
-            timestampString = "518002845.699383"
+            timestampString = "518188712.490182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
             landmarkName = "tableView(_:editingStyleForRowAt:)"
             landmarkType = "7">
             <Actions>
@@ -93,11 +77,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "001-Challenge-TableOfBugs/BugsTableViewController.swift"
-            timestampString = "518002845.699383"
+            timestampString = "518188712.490182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "tableView(_:editingStyleForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -109,11 +93,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "001-Challenge-TableOfBugs/BugsTableViewController.swift"
-            timestampString = "518001032.113222"
+            timestampString = "518188712.490182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "setEditing(_:animated:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -125,11 +109,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "001-Challenge-TableOfBugs/BugsTableViewController.swift"
-            timestampString = "518001375.952432"
+            timestampString = "518188712.490182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "setEditing(_:animated:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -137,15 +121,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "001-Challenge-TableOfBugs/BugsTableViewController.swift"
-            timestampString = "518002833.992652"
+            timestampString = "518188712.490182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "tableView(_:commit:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -153,16 +137,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "001-Challenge-TableOfBugs/BugsTableViewController.swift"
-            timestampString = "518002874.083528"
+            timestampString = "518188712.490182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "tableView(_:commit:forRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "001-Challenge-TableOfBugs/BugsTableViewController.swift"
+            timestampString = "518188712.490182"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "setEditing(_:animated:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
