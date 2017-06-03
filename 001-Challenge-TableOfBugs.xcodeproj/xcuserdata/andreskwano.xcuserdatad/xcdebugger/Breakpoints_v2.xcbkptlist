@@ -24,9 +24,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "tableView(_:editingStyleForRowAt:)"
-            landmarkType = "7">
+            endingLineNumber = "180">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -40,9 +38,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "tableView(_:editingStyleForRowAt:)"
-            landmarkType = "7">
+            endingLineNumber = "178">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -57,9 +53,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "tableView(_:editingStyleForRowAt:)"
-            landmarkType = "7">
+            endingLineNumber = "179">
             <Actions>
                <BreakpointActionProxy
                   ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
@@ -81,25 +75,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "tableView(_:editingStyleForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "001-Challenge-TableOfBugs/BugsTableViewController.swift"
-            timestampString = "518188712.490182"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "setEditing(_:animated:)"
-            landmarkType = "7">
+            endingLineNumber = "182">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -114,7 +90,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
             endingLineNumber = "120"
-            landmarkName = "setEditing(_:animated:)"
+            landmarkName = "tableView(_:commit:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -130,8 +106,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
             endingLineNumber = "137"
-            landmarkName = "tableView(_:commit:forRowAt:)"
-            landmarkType = "7">
+            landmarkName = "BugsTableViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -146,8 +122,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "142"
             endingLineNumber = "142"
-            landmarkName = "tableView(_:commit:forRowAt:)"
-            landmarkType = "7">
+            landmarkName = "BugsTableViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -162,8 +138,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
             endingLineNumber = "115"
-            landmarkName = "setEditing(_:animated:)"
-            landmarkType = "7">
+            landmarkName = "BugsTableViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

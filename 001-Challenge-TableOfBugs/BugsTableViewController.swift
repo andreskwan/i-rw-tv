@@ -94,16 +94,32 @@ class BugsTableViewController: UITableViewController {
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         // TODO: - TODO - what happens if I remove this line?
+        //Goal: set "isEditing" before evaluate isEditing - is inherited and write protected
         super.setEditing(editing, animated: animated)
         if isEditing {
+            //batch insertions
+            //Goal: Add a new row at the end of each section
             tableView.beginUpdates()
-                for (sectionIndex, section) in bugSections.enumerated() {
-                    let indexPath = IndexPath(row: section.bugs.count, section: sectionIndex)
-                    tableView.insertRows(at: [indexPath], with: .fade)
-                }
+            for (sectionIndex, section) in bugSections.enumerated() {
+                
+                let indexPath = IndexPath(row: section.bugs.count, section: sectionIndex)
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
             tableView.endUpdates()
+            //Goal: set "isEditing" before evaluate isEditing
+            //is not needed because of super.setEditing isEditing is inherited property
+            //            tableView.setEditing(true, animated: true)
         } else {
             
+            //Goal: Delete added rows (for adding a new row) to each section
+            tableView.beginUpdates()
+            for (sectionIndex, section) in bugSections.enumerated() {
+                let indexPath = IndexPath(row: section.bugs.count, section: sectionIndex)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            tableView.endUpdates()
+            //is not needed because of super.setEditing isEditing is inherited property
+            //            tableView.setEditing(false, animated: true)
         }
     }
     /*
