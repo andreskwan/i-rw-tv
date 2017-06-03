@@ -141,7 +141,14 @@ class BugsTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-             
+            let newBug = ScaryBug(withName: "New Name",
+                                  imageName: nil,
+                                  howScary: .QuiteScary)
+            
+            var bugSection = bugSections[indexPath.section]
+            bugSection.bugs.append(newBug)
+            tableView.insertRows(at: [indexPath],
+                                 with: .automatic)
         }    
     }
 
