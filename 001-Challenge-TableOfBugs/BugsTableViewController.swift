@@ -70,7 +70,7 @@ class BugsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BugCell", for: indexPath)
         
         //>= because equals means indexPath.count == bugs.count + 1
-        if indexPath.row >= bugSections[indexPath.section].bugs.count {
+        if indexPath.row >= bugSections[indexPath.section].bugs.count && isEditing{
             // We are providing a cell to allow to add a new cell
             // we are reusing a cell so the image must be set. should be nil
             cell.textLabel?.text = "Add New Bug"
@@ -80,9 +80,13 @@ class BugsTableViewController: UITableViewController {
             let bug = bugSections[indexPath.section].bugs[indexPath.row]
             cell.textLabel?.text = bug.name
             cell.detailTextLabel?.text = ScaryBug.scaryFactorToString(scaryFactor: bug.howScary)
-            
+            guard let imageView = cell.imageView else {
+                return cell
+            }
             if let bugImage = bug.image {
-                cell.imageView?.image = bugImage
+                imageView.image = bugImage
+            } else {
+                imageView.image = nil
             }
         }
         return cell
