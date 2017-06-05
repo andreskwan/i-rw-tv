@@ -149,8 +149,9 @@ class BugsTableViewController: UITableViewController {
                                   imageName: nil,
                                   howScary: .QuiteScary)
             
-            var bugSection = bugSections[indexPath.section]
-            bugSection.bugs.append(newBug)
+//            var bugSection = bugSections[indexPath.section]
+//            bugSection.bugs.append(newBug)
+            bugSections[indexPath.section].bugs.append(newBug)
             tableView.insertRows(at: [indexPath],
                                  with: .automatic)
         }    
