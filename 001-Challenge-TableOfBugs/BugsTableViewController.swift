@@ -17,17 +17,9 @@ class BugsTableViewController: UITableViewController {
         // so I could append to the array with the appropiate index value
         // https://stackoverflow.com/questions/24007461/how-to-enumerate-an-enum-with-string-type
         
-        bugSections.append(BugSection(amountOfFear: .Aiiiiieeeee))
-        bugSections.append(BugSection(amountOfFear: .Aiiiiieeeee))
-        bugSections.append(BugSection(amountOfFear: .Aiiiiieeeee))
-        bugSections.append(BugSection(amountOfFear: .Aiiiiieeeee))
-        bugSections.append(BugSection(amountOfFear: .Aiiiiieeeee))
-        
-        bugSections[ScaryFactor.Aiiiiieeeee.rawValue] = BugSection(amountOfFear: .Aiiiiieeeee)
-        bugSections[ScaryFactor.AverageScary.rawValue] = BugSection(amountOfFear: .AverageScary)
-        bugSections[ScaryFactor.NotScary.rawValue] = BugSection(amountOfFear: .NotScary)
-        bugSections[ScaryFactor.QuiteScary.rawValue] = BugSection(amountOfFear: .QuiteScary)
-        bugSections[ScaryFactor.ALittleScary.rawValue] = BugSection(amountOfFear: .ALittleScary)
+        for fearValue in 0 ..< ScaryFactor.TotalFactors.rawValue {
+            bugSections.append(BugSection(amountOfFear: ScaryFactor(rawValue: fearValue)!))
+        }
         
         for bug in ScaryBug.bugs() {
             bugSections[bug.howScary.rawValue].bugs.append(bug)

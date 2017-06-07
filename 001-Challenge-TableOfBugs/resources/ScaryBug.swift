@@ -14,6 +14,7 @@ enum ScaryFactor: Int {
   case AverageScary
   case QuiteScary
   case Aiiiiieeeee
+  case TotalFactors
 }
 
 class ScaryBug {
@@ -36,16 +37,18 @@ class ScaryBug {
   static func scaryFactorToString(scaryFactor:ScaryFactor) -> String {
     var scaryString = ""
     switch(scaryFactor) {
-      case .NotScary:
-        scaryString = "Not scary"
-    case .ALittleScary:
-        scaryString = "A little scary"
-    case .AverageScary:
-        scaryString = "Average scariness"
-    case .QuiteScary:
-        scaryString = "Quite scary"
-    case .Aiiiiieeeee:
-        scaryString = "AIIIIIEEEEEEE!!"
+        case .NotScary:
+            scaryString = "Not scary"
+        case .ALittleScary:
+            scaryString = "A little scary"
+        case .AverageScary:
+            scaryString = "Average scariness"
+        case .QuiteScary:
+            scaryString = "Quite scary"
+        case .Aiiiiieeeee:
+            scaryString = "AIIIIIEEEEEEE!!"
+        default:
+            scaryString = "TotalFactors"
     }
     return scaryString
   }
