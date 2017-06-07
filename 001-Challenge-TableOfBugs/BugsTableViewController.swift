@@ -31,6 +31,7 @@ class BugsTableViewController: UITableViewController {
         // TODO: - TODO - set the bugSections array
         setBugSections()
         navigationItem.rightBarButtonItem = editButtonItem
+        tableView.allowsSelectionDuringEditing = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -51,14 +52,16 @@ class BugsTableViewController: UITableViewController {
         return bugSections.count
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView,
+                            numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         let adjustment = isEditing ? 1 : 0
         // TODO: - TODO - validate for adding a new row per section
         return bugSections[section].bugs.count + adjustment
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BugCell", for: indexPath)
         
         //>= because equals means indexPath.count == bugs.count + 1
@@ -84,11 +87,13 @@ class BugsTableViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView,
+                            titleForHeaderInSection section: Int) -> String? {
         return ScaryBug.scaryFactorToString(scaryFactor: bugSections[section].amountOfFear)
     }
     
-    override func setEditing(_ editing: Bool, animated: Bool) {
+    override func setEditing(_ editing: Bool,
+                             animated: Bool) {
         // TODO: - TODO - what happens if I remove this line?
         //Goal: set "isEditing" before evaluate isEditing - is inherited and write protected
         super.setEditing(editing, animated: animated)
@@ -173,12 +178,32 @@ class BugsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        let bugSection = bugSections[indexPath.section]
-        if indexPath.row >= bugSection.bugs.count {
+    override func tableView(_ tableView: UITableView,
+                            editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        if indexPath.row >= bugSections[indexPath.section].bugs.count {
             return .insert
         }
         return .delete
+    }
+    
+    //enable/disable selection taped row
+    override func tableView(_ tableView: UITableView,
+                            willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if isEditing && indexPath.row < bugSections[indexPath.section].bugs.count {
+            return nil
+        }
+        return indexPath
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
+        //
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row >= bugSections[indexPath.section].bugs.count && isEditing {
+                 self.tableView(tableView,
+                           commit: .insert,
+                           forRowAt: indexPath)
+        }
     }
 }
 
