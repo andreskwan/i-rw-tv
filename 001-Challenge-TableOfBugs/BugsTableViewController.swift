@@ -205,6 +205,56 @@ class BugsTableViewController: UITableViewController {
                            forRowAt: indexPath)
         }
     }
+    
+    //--------------Moving Rows-----------------
+    //as Delegate - used to identify rows that can be moved
+    //when is tapped edit.
+    override func tableView(_ tableView: UITableView,
+                            canMoveRowAt indexPath: IndexPath) -> Bool {
+        if isEditing && indexPath.row >= bugSections[indexPath.section].bugs.count {
+            return false
+        }
+        return true
+    }
+    
+    /*update model with movement of data
+     move rows to different sections is possible 
+     add logic to prevent to move rows to a different section.
+    */
+    override func tableView(_ tableView: UITableView,
+                            moveRowAt sourceIndexPath: IndexPath,
+                            to destinationIndexPath: IndexPath) {
+        if isEditing && sourceIndexPath.row != destinationIndexPath.row {
+            let movedBug = bugSections[sourceIndexPath.section].bugs[sourceIndexPath.row]
+            bugSections[sourceIndexPath.section].bugs.remove(at: sourceIndexPath.row)
+            bugSections[destinationIndexPath.section].bugs.insert(movedBug,
+                                                             at: destinationIndexPath.row)
+        }
+    }
+    
+    /*
+     I need to identify if sections are different so,
+     I could avoid last row moving when trying to insert from
+     another section
+     */
+    override func tableView(_ tableView: UITableView,
+                            targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath,
+                            toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        
+        let proposedSection = proposedDestinationIndexPath.section
+        let proposedRow = proposedDestinationIndexPath.row
+        let sourceSection = sourceIndexPath.section
+        let sourceRow = sourceIndexPath.row
+        
+        //valid when proposedSection == sourceSection 
+        if proposedSection == sourceSection {
+            if isEditing && proposedRow >= bugSections[proposedSection].bugs.count {
+                return IndexPath(item: bugSections[proposedSection].bugs.count-1,
+                                 section: proposedSection)
+            }
+        }
+        return proposedDestinationIndexPath
+    }
 }
 
 
