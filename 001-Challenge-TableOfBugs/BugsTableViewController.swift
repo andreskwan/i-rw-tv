@@ -12,6 +12,7 @@ class BugsTableViewController: UITableViewController {
     
     var bugSections = [BugSection]()
     
+    //v4 Multiple sections
     private func setBugSections() {
         // TODO: - TODO - I need to enumerate an enum
         // so I could append to the array with the appropiate index value
@@ -30,8 +31,13 @@ class BugsTableViewController: UITableViewController {
         super.viewDidLoad()
         // TODO: - TODO - set the bugSections array
         setBugSections()
+        //v2 - ViewController instead of TableViewController
+//        automaticallyAdjustsScrollViewInsets = false
+        //v5 - Delete row by tapping Edit button
         navigationItem.rightBarButtonItem = editButtonItem
+        //v6
         tableView.allowsSelectionDuringEditing = true
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -52,6 +58,7 @@ class BugsTableViewController: UITableViewController {
         return bugSections.count
     }
 
+    //v4 Multiple sections
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -64,7 +71,6 @@ class BugsTableViewController: UITableViewController {
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BugCell", for: indexPath)
         
-        //>= because equals means indexPath.count == bugs.count + 1
         if indexPath.row >= bugSections[indexPath.section].bugs.count && isEditing{
             // We are providing a cell to allow to add a new cell
             // we are reusing a cell so the image must be set. should be nil
@@ -87,6 +93,7 @@ class BugsTableViewController: UITableViewController {
         return cell
     }
 
+    //v4 Multiple sections
     override func tableView(_ tableView: UITableView,
                             titleForHeaderInSection section: Int) -> String? {
         return ScaryBug.scaryFactorToString(scaryFactor: bugSections[section].amountOfFear)
@@ -132,13 +139,17 @@ class BugsTableViewController: UITableViewController {
     */
 
     // Override to support editing the table view.
+    //v5 Delete Rows
     override func tableView(_ tableView: UITableView,
                             commit editingStyle: UITableViewCellEditingStyle,
                             forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             bugSections[indexPath.section].bugs.remove(at: indexPath.row)
-            //tableView.reloadData() can be used here but is a bad UX
+            //v5 - can be used here but is a bad UX
+            //   - no animation
+            //tableView.reloadData()
+            //v5 - with animation better UX
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
