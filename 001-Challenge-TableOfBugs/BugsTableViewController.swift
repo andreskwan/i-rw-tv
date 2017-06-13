@@ -37,6 +37,9 @@ class BugsTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = editButtonItem
         //v6
         tableView.allowsSelectionDuringEditing = true
+        //v7
+        tableView.estimatedRowHeight = 60.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

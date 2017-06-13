@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -40,31 +41,46 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Co8-p2-5fN" id="a5y-aV-Kcc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bee.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XF4-0H-7Km">
-                                            <rect key="frame" x="14" y="0.0" width="60" height="60"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7Q1-qr-Qz4">
+                                            <rect key="frame" x="0.0" y="-0.5" width="375" height="60.5"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bee.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XF4-0H-7Km">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="GXf-2G-qmD"/>
+                                                        <constraint firstAttribute="width" constant="60" id="ZcZ-Cv-jPx"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZF-KG-y8u">
+                                                    <rect key="frame" x="60" y="11.5" width="292" height="37.5"/>
+                                                    <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shockedface2_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="u4a-FM-m0I">
+                                                    <rect key="frame" x="352" y="19" width="23" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="23" id="2OD-ba-vA8"/>
+                                                        <constraint firstAttribute="height" constant="23" id="6LG-cE-o3x"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="60" id="GXf-2G-qmD"/>
-                                                <constraint firstAttribute="width" constant="60" id="ZcZ-Cv-jPx"/>
+                                                <constraint firstItem="pZF-KG-y8u" firstAttribute="centerY" secondItem="XF4-0H-7Km" secondAttribute="centerY" id="1GZ-XQ-XLS"/>
+                                                <constraint firstItem="pZF-KG-y8u" firstAttribute="top" secondItem="7Q1-qr-Qz4" secondAttribute="top" constant="11.5" id="ZAN-Mk-GVE"/>
+                                                <constraint firstAttribute="bottom" secondItem="pZF-KG-y8u" secondAttribute="bottom" constant="11.5" id="c2K-MJ-Dlw"/>
                                             </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZF-KG-y8u">
-                                            <rect key="frame" x="82" y="8" width="254" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="24"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="shockedface2_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="u4a-FM-m0I">
-                                            <rect key="frame" x="344" y="18" width="23" height="23"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="23" id="2OD-ba-vA8"/>
-                                                <constraint firstAttribute="height" constant="23" id="6LG-cE-o3x"/>
-                                            </constraints>
-                                        </imageView>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="7Q1-qr-Qz4" secondAttribute="bottom" id="IdJ-iL-yOR"/>
+                                        <constraint firstItem="7Q1-qr-Qz4" firstAttribute="leading" secondItem="a5y-aV-Kcc" secondAttribute="leading" id="Nzu-zA-MhG"/>
+                                        <constraint firstItem="7Q1-qr-Qz4" firstAttribute="top" secondItem="a5y-aV-Kcc" secondAttribute="topMargin" constant="-8.5" id="Yd1-QT-rRe"/>
+                                        <constraint firstAttribute="trailing" secondItem="7Q1-qr-Qz4" secondAttribute="trailing" id="qDi-2v-rlt"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="bugImageView" destination="XF4-0H-7Km" id="hIV-dg-6B3"/>
