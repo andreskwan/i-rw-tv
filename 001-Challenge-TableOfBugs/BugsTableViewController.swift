@@ -69,25 +69,35 @@ class BugsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BugCell", for: indexPath)
+        let cell : UITableViewCell
         
         if indexPath.row >= bugSections[indexPath.section].bugs.count && isEditing{
             // We are providing a cell to allow to add a new cell
             // we are reusing a cell so the image must be set. should be nil
+            cell = tableView.dequeueReusableCell(withIdentifier: "NewRowCell", for: indexPath)
             cell.textLabel?.text = "Add New Bug"
             cell.detailTextLabel?.text = nil
             cell.imageView?.image = nil
         } else {
             let bug = bugSections[indexPath.section].bugs[indexPath.row]
-            cell.textLabel?.text = bug.name
-            cell.detailTextLabel?.text = ScaryBug.scaryFactorToString(scaryFactor: bug.howScary)
-            guard let imageView = cell.imageView else {
-                return cell
-            }
-            if let bugImage = bug.image {
-                imageView.image = bugImage
-            } else {
-                imageView.image = nil
+            cell = tableView.dequeueReusableCell(withIdentifier: "BugCell", for: indexPath)
+            //v7
+            if let bugCell = cell as? ScaryBugCell {
+                bugCell.bugNameLabel?.text = bug.name
+                if bug.howScary.rawValue > ScaryFactor.AverageScary.rawValue {
+                    bugCell.howScaryImageView.image = UIImage(named: "shockedface2_full")
+                } else {
+                    bugCell.howScaryImageView.image = UIImage(named: "shockedface2_empty")
+                }
+                
+                guard let imageView = bugCell.bugImageView else {
+                    return cell
+                }
+                if let bugImage = bug.image {
+                    imageView.image = bugImage
+                } else {
+                    imageView.image = nil
+                }
             }
         }
         return cell
