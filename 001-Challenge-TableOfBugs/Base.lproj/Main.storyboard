@@ -66,6 +66,11 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bugImageView" destination="XF4-0H-7Km" id="hIV-dg-6B3"/>
+                                    <outlet property="bugNameLabel" destination="pZF-KG-y8u" id="oNk-EB-PFW"/>
+                                    <outlet property="howScaryImageView" destination="u4a-FM-m0I" id="TOF-zP-Tzr"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewRowCell" textLabel="jfF-rI-tkZ" detailTextLabel="7db-bc-Flg" style="IBUITableViewCellStyleSubtitle" id="E7o-87-ACy">
                                 <rect key="frame" x="0.0" y="88" width="375" height="44"/>
