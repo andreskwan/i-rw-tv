@@ -193,15 +193,23 @@ class BugsTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "GoToEditBug" {
+            if let editTVC = segue.destination as? EditTableViewController {
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let bug = bugSections[indexPath.section].bugs[indexPath.row]
+                    editTVC.bugToEdit = bug
+                }
+            }
+        }
     }
-    */
+
+    // MARK: - TableView DataSource
     override func tableView(_ tableView: UITableView,
                             editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         if indexPath.row >= bugSections[indexPath.section].bugs.count {
@@ -228,6 +236,7 @@ class BugsTableViewController: UITableViewController {
                            commit: .insert,
                            forRowAt: indexPath)
         }
+        
     }
     
     //--------------Moving Rows-----------------
@@ -268,7 +277,7 @@ class BugsTableViewController: UITableViewController {
         let proposedSection = proposedDestinationIndexPath.section
         let proposedRow = proposedDestinationIndexPath.row
         let sourceSection = sourceIndexPath.section
-        let sourceRow = sourceIndexPath.row
+//        let sourceRow = sourceIndexPath.row
         
         //valid when proposedSection == sourceSection 
         if proposedSection == sourceSection {
