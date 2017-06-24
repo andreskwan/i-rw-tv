@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA3770B91EF5DB5A009A7217 /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3770B81EF5DB5A009A7217 /* EditTableViewController.swift */; };
 		EA3FC15A1EDC823700B7E934 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FC1591EDC823700B7E934 /* AppDelegate.swift */; };
 		EA3FC15C1EDC823700B7E934 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FC15B1EDC823700B7E934 /* ViewController.swift */; };
 		EA3FC15F1EDC823700B7E934 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA3FC15D1EDC823700B7E934 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA3770B81EF5DB5A009A7217 /* EditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditTableViewController.swift; path = "001-Challenge-TableOfBugs/EditTableViewController.swift"; sourceTree = "<group>"; };
 		EA3FC1561EDC823700B7E934 /* 001-Challenge-TableOfBugs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "001-Challenge-TableOfBugs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA3FC1591EDC823700B7E934 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA3FC15B1EDC823700B7E934 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		EA3FC14D1EDC823700B7E934 = {
 			isa = PBXGroup;
 			children = (
+				EA3770B81EF5DB5A009A7217 /* EditTableViewController.swift */,
 				EA5F7C761EEDE2630029880E /* ScaryBugCell.swift */,
 				EA3FC1581EDC823700B7E934 /* 001-Challenge-TableOfBugs */,
 				EA3FC1571EDC823700B7E934 /* Products */,
@@ -268,6 +271,7 @@
 				EA85A3D51EDCA7AC0039EDEA /* BugsTableViewController.swift in Sources */,
 				EA3FC15C1EDC823700B7E934 /* ViewController.swift in Sources */,
 				EADD714A1EDD09CC00364398 /* BugSection.swift in Sources */,
+				EA3770B91EF5DB5A009A7217 /* EditTableViewController.swift in Sources */,
 				EA5F7C771EEDE2630029880E /* ScaryBugCell.swift in Sources */,
 				EA3FC15A1EDC823700B7E934 /* AppDelegate.swift in Sources */,
 				EA3FC1981EDC8DEC00B7E934 /* ScaryBug.swift in Sources */,
