@@ -48,6 +48,11 @@ class BugsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -203,6 +208,8 @@ class BugsTableViewController: UITableViewController {
             if let editTVC = segue.destination as? EditTableViewController {
                 if let indexPath = tableView.indexPathForSelectedRow {
                     let bug = bugSections[indexPath.section].bugs[indexPath.row]
+                    //ScaryBug is a referece - that is why we can edit this object 
+                    //in the edit view.
                     editTVC.bugToEdit = bug
                 }
             }
@@ -288,6 +295,5 @@ class BugsTableViewController: UITableViewController {
         }
         return proposedDestinationIndexPath
     }
+    
 }
-
-
